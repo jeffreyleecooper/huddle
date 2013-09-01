@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+{% block head %}
+
+<title>{% block title %}Huddle{% endblock %}</title>
+<meta name="description" content="{% block description %}Welcome to the Huddle.{% endblock %}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- iOS app styles -->
+<link rel="apple-touch-icon" href="images/appicon.png" />
+<meta name ="apple-mobile-web-app-capable" content="yes"/>
+<link rel="apple-touch-startup-image" href="img/splash.png" />
+<meta name="apple-web-app-status-bar-style" content="black" />
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+<script src="assets/js/base.js"></script>
+<link rel="stylesheet" href="assets/css/base.css" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43029503-1', 'tsmhuddle.appspot.com');
+  ga('send', 'pageview');
+</script>
+{% endblock %}
+</head>
+
+
+
+<body>
+{% block body %}
+<div id="home" data-role="page" data-theme="c">
+<div data-role="content">
+<h1>Huddle</h1>
+<br/>
+<ul data-role="listview">
+<li>View current week tasks</li>
+<li>Syncs nightly with Asana</li>
+<li>Mobile friendly</li>
+</ul>
+<br /><br />
+<a href="{{login_url}}" data-role="button" data-theme="b" >Login</a>
+{% if url2 %}
+<a href="{{ url2 }}" data-role="button" data-theme="d" >Logout</a>
+{% endif %}
+</div><!-- end content -->
+</div><!-- end page -->
+
+{% endblock %}
+</body>
+
+
+</html>

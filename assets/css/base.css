@@ -1,0 +1,48 @@
+#home {
+	text-align:center;
+}
+
+#home h1 {
+	color:blue; 
+	font-style: italic;
+}
+
+#home div.ui-content {
+	width:60%; 
+	margin:0 auto; 
+	max-width:400px;
+}
+
+#home ul.ui-listview li {
+	text-align:center;
+	font-style:italic;
+	font-size:.8em;
+}
+
+#byClientlistview {
+	width:90%;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) {
+
+	.ui-icon-vs_video {
+		background-image: url("../../img/icon_video_hr.png");
+		background-size:18px 18px;
+	}
+	
+	.ui-icon-vs_photo {
+		background-image: url("../../img/icon_photo_hr.png");
+		background-size:18px 18px;
+	}
+	
+	.ui-icon-vs_blog {
+		background-image: url("../../img/icon_blog_hr.png");
+		background-size:18px 18px;
+	}
+	
+	.ui-icon-vs_twitter {
+		background-image: url("../../img/icon_twitter_hr.png");
+		background-size:18px 18px;
+	}
+
+}

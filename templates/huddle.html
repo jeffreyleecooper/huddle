@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block body %}
+<!--  PAGE 1: My Tasks -->
+<div id="shipmate" data-role="page" data-theme="a">
+<div data-role="header" data-position="fixed" data-id="vs_header">
+<h1>By Shipmate</h1>
+<a href="/" data-icon="home" class="ui-btn-right">Home</a>
+</div><!-- end header -->
+
+<div data-role="content">
+<div data-role="collapsible-set">
+<div data-role="collapsible">
+<h1>Jeff</h1>
+<ul data-role="listview">
+<li>Task 1</li>
+<li>Task 2</li>
+<li>Task 3</li>
+</ul><!-- end listview -->
+</div><!-- end collapsible -->
+<div data-role="collapsible">
+<h1>Nolan</h1>
+<ul data-role="listview">
+<li>Task 1</li>
+<li>Task 2</li>
+<li>Task 3</li>
+</ul><!-- end listview -->
+</div><!-- end collapsible -->
+<div data-role="collapsible">
+<h1>Scott</h1>
+<ul data-role="listview">
+<li>Task 1</li>
+<li>Task 2</li>
+<li>Task 3</li>
+</ul><!-- end listview -->
+</div><!-- end collapsible -->
+</div><!--  end collapsible-set -->
+</div><!-- end content -->
+
+<div data-role="footer" data-position="fixed" data-id="vs_footer">
+<div data-role="navbar">
+<ul>
+<li><a href="#" data-icon="arrow-r" class="ui-btn-active ui-state-persist">By Shipmate</a></li>
+<li><a href="#client" data-icon="bars">By Client</a></li>
+</ul>
+</div><!-- end navbar -->
+</div><!-- end footer -->
+</div><!-- end page -->
+
+
+<!--  PAGE 2: Team Tasks -->
+<div id="client" data-role="page" data-theme="a">
+<div data-role="header" data-position="fixed" data-id="vs_header">
+<h1>By Client</h1>
+<a href="/" data-icon="home" class="ui-btn-right">Home</a>
+</div><!-- end header -->
+<div id="clientlist" data-role="content">
+<p>Loading content. Thanks for your patience...</p>
+</div><!-- end content -->
+
+<div data-role="footer" data-position="fixed" data-id="vs_footer">
+<div data-role="navbar">
+<ul>
+<li><a href="#shipmate" data-icon="arrow-r">By Shipmate</a></li>
+<li><a href="#" data-icon="bars" class="ui-btn-active ui-state-persist">By Client</a></li>
+</ul>
+</div><!-- end navbar -->
+</div><!-- end footer -->
+</div><!-- end page -->
+
+<div id="showClientTasks" data-role="page" data-theme="a">
+<div data-role="header" data-position="fixed" data-id="vs_header">
+<h1>Task Details</h1>
+<a href="#client" data-icon="back" data-conpos="notext" data-direction="reverse" >Clients</a>
+</div><!-- end header -->
+<div data-role="content">
+<div id="clienttaskcontent">
+<p>Loading task content. Thanks for your patience...</p>
+</div><!-- end clienttaskcontent -->
+</div><!-- end content -->
+
+<div data-role="footer" data-position="fixed" data-id="vs_footer">
+<div data-role="navbar">
+<ul>
+<li><a href="#shipmate" data-icon="arrow-r">By Shipmate</a></li>
+<li><a href="#" data-icon="bars" class="ui-btn-active ui-state-persist">By Client</a></li>
+</ul>
+</div><!-- end navbar -->
+</div><!-- end footer -->
+</div><!-- end page -->
+
+<!--  JSON feed update -->
+<script type="text/javascript">
+$.ajax({
+	type:'GET',
+	url:'/asanafeed-client',
+	dataType:'json',
+	success : function(resp){
+		listTasksbyClient(resp)
+	}
+	
+});
+
+</script>
+{% endblock %}
